@@ -82,30 +82,3 @@ if (sendChat && chatInput) {
         }
     });
 }
-
-// --- Feedback Form Handling (Connected to Google Sheets Web App) ---
-const feedbackForm = document.getElementById('feedbackForm');
-const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE'; // Replace with your actual deployed Google Apps Script URL
-
-if (feedbackForm) {
-    feedbackForm.addEventListener('submit', e => {
-        e.preventDefault();
-        
-        if (scriptURL.includes('YOUR_GOOGLE_APPS_SCRIPT')) {
-            alert('Thank you! Your feedback has been recorded locally. (Link your Google Apps Script URL in script.js to sync with Google Sheets automatically.)');
-            feedbackForm.reset();
-            return;
-        }
-
-        fetch(scriptURL, { method: 'POST', body: new FormData(feedbackForm)})
-            .then(response => {
-                alert('Thank you! Your feedback has been securely saved to our database.');
-                feedbackForm.reset();
-            })
-            .catch(error => {
-                console.error('Error!', error.message);
-                alert('Feedback submitted successfully!');
-                feedbackForm.reset();
-            });
-    });
-}
