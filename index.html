@@ -1,77 +1,433 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Tuition Classes</title>
-    <!-- Your existing styles plus login styles -->
-    <style>
-        /* Your main website styles */
-        body { font-family: Arial, sans-serif; background: #f4f4f9; }
-        
-        /* Login box styles */
-        .box { background: white; padding: 20px; margin: 20px auto; border-radius: 8px; width: 100%; max-width: 350px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        input, button { width: 100%; padding: 10px; margin: 6px 0 14px 0; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
-        button { background: #DC2626; color: white; border: none; cursor: pointer; font-weight: bold; }
-        button:hover { background: #B91C1C; }
-    </style>
+
+    <title>Professional Tuition Classes | Build Academic Excellence</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-    <!-- Your existing main website navigation and hero sections go here -->
 
-    <!-- Student Login Form Section -->
-    <div class="box">
-        <h3>Student Login</h3>
-        <input type="text" id="loginId" placeholder="Student ID (e.g., PTC101)">
-        <input type="password" id="loginPass" placeholder="Password">
-        <button onclick="loginStudent()">Login</button>
-        <p id="msg" style="color: #DC2626; font-size: 0.85rem; margin: 0;"></p>
+
+    <header class="navbar">
+
+        <div class="logo">P.T.C. <span>Classes</span></div>
+
+        <nav>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#products">Courses</a></li>
+
+                <li><a href="#why-us">Why Us</a></li>
+
+                <li><a href="#offer">Offers</a></li>
+
+                <li><a href="#feedback">Feedback</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+                <li><a href="#" id="loginBtn" class="login-nav-btn">Student Login</a></li>
+
+            </ul>
+
+            <div class="hamburger" id="hamburger">
+
+                <i class="fas fa-bars"></i>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <span class="badge">Academic Excellence</span>
+
+            <h1>Give Your Child the Ultimate Academic Advantage!</h1>
+
+            <p>At <strong>Professional Tuition Classes</strong>, we transform classroom stress into top academic scores through concept clarity and disciplined guidance.</p>
+
+            <div class="hero-btns">
+
+                <a href="#products" class="btn btn-primary">Explore Courses</a>
+
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Products Section: 5th to 10th & Online/Offline -->
+
+    <section id="products" class="products-section">
+
+        <h2 class="section-title">Our Programs</h2>
+
+        <p class="section-subtitle">Tailored learning for grades 5th to 10th in flexible modes</p>
+
+
+
+        <div class="cards-grid">
+
+            <div class="card">
+
+                <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+
+                <h3>5th to 7th Grade (Foundation)</h3>
+
+                <p>Building strong fundamentals in Mathematics, Science, and English during crucial formative years.</p>
+
+                <div class="mode-tags">
+
+                    <span class="tag">Online</span> <span class="tag">Offline</span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="card-icon"><i class="fas fa-award"></i></div>
+
+                <h3>8th to 10th Grade (Board Prep)</h3>
+
+                <p>Advanced concept training, rigorous board exam preparation, and continuous progress assessments.</p>
+
+                <div class="mode-tags">
+
+                    <span class="tag">Online</span> <span class="tag">Offline</span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="card-icon"><i class="fas fa-laptop-house"></i></div>
+
+                <h3>Online Interactive Batches</h3>
+
+                <p>Live, two-way interactive classes from the comfort of your home with digital notes and recorded sessions.</p>
+
+                <div class="mode-tags">
+
+                    <span class="tag highlight">Live Online</span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="card-icon"><i class="fas fa-school"></i></div>
+
+                <h3>Offline Classroom Coaching</h3>
+
+                <p>Traditional face-to-face learning in our disciplined, distraction-free Naigaon center.</p>
+
+                <div class="mode-tags">
+
+                    <span class="tag highlight">In-Center</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="offer" class="offer-banner">
+
+        <div class="offer-container">
+
+            <div class="offer-tag"><i class="fas fa-gift"></i> Limited Time Offer</div>
+
+            <h2>Special Admissions Discount!</h2>
+
+            <p>Enroll today and get a <strong>flat 10% off</strong> on your first month's tuition fees!</p>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="why-us" class="pillars-section">
+
+        <h2 class="section-title">What Makes Us Different?</h2>
+
+        <p class="section-subtitle">Our core pillars of quality education</p>
+
+
+
+        <div class="cards-grid">
+
+            <div class="card">
+
+                <div class="card-icon"><i class="fas fa-users"></i></div>
+
+                <h3>Focused Group Batches</h3>
+
+                <p>Small batch sizes ensuring zero overcrowding, healthy competition, and personal attention for every student.</p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="card-icon"><i class="fas fa-brain"></i></div>
+
+                <h3>Concept-First Teaching</h3>
+
+                <p>We eliminate rote memorization. Our simple explanations help students genuinely understand and love studying.</p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+
+                <h3>Mock Tests & Tracking</h3>
+
+                <p>Weekly tests and performance tracking ensure your child is always exam-ready and confident.</p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+
+                <h3>Expert Educator Team</h3>
+
+                <p>Learn from energetic, highly qualified tutors who stay updated with modern school curriculums.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Feedback Section -->
+
+    <section id="feedback" class="feedback-section">
+
+        <h2 class="section-title">Student & Parent Feedback</h2>
+
+        <p class="section-subtitle">We would love to hear about your experience with us!</p>
+
+        
+
+        <div class="feedback-form-container">
+
+            <form id="feedbackForm">
+
+                <div class="form-group">
+
+                    <input type="text" name="Name" placeholder="Your Name" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <select name="Role" required>
+
+                        <option value="" disabled selected>Select Your Role</option>
+
+                        <option value="Student (5th-10th)">Student (5th-10th Grade)</option>
+
+                        <option value="Parent">Parent</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <textarea name="Feedback" rows="4" placeholder="Write your feedback or review here..." required></textarea>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Feedback</button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="contact" class="contact-section">
+
+        <h2 class="section-title">Get In Touch</h2>
+
+        <p class="section-subtitle">Connect with our administrative office directly</p>
+
+
+
+        <div class="contact-container">
+
+            <div class="contact-card">
+
+                <i class="fab fa-whatsapp contact-icon"></i>
+
+                <h3>Call / WhatsApp</h3>
+
+                <p>Have questions? Chat with us directly.</p>
+
+                <a href="https://wa.me/919987566019" target="_blank" class="contact-link">+91 9987566019</a>
+
+            </div>
+
+
+
+            <div class="contact-card" style="text-align: left;">
+
+                <i class="fas fa-map-marker-alt contact-icon" style="color: var(--accent-color); background: #FEF2F2;"></i>
+
+                <h3>Our Address</h3>
+
+                <p>6-C, 1003, Nakshatra Greens, Tivri Road, Naigaon (East), Palghar - 401208.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Student Login Modal -->
+
+    <div id="loginModal" class="modal-overlay" style="display: none;">
+
+        <div class="modal-content">
+
+            <button id="closeLogin" class="close-modal">&times;</button>
+
+            <h2>Student Portal Login</h2>
+
+            <p>Enter your Student ID and password to access your dashboard.</p>
+
+            
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <input type="text" id="studentId" placeholder="Enter Student ID (e.g., PTC101)" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <input type="password" id="studentPassword" placeholder="Enter Password" required>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+
+            </form>
+
+            <div id="loginMessage" style="margin-top: 15px; font-size: 0.9rem; font-weight: 600;"></div>
+
+        </div>
+
     </div>
 
-    <!-- Generated Dashboard Section -->
-    <div id="dashboard" class="box" style="display:none; background:#F0FDF4; border: 1px solid #86EFAC;">
-        <h3>Student Dashboard</h3>
-        <p><strong>Name:</strong> <span id="dName"></span></p>
-        <p><strong>Student ID:</strong> <span id="dId"></span></p>
-        <p><strong>Tuition Fees:</strong> ₹<span id="dFees"></span></p>
-        <button onclick="logout()" style="background:#64748B;">Logout</button>
+
+
+    <!-- Floating Chatbot Widget -->
+
+    <div id="chatbot-container" class="chatbot-container">
+
+        <div id="chat-window" class="chat-window" style="display: none;">
+
+            <div class="chat-header">
+
+                <h4>PTC Support Bot</h4>
+
+                <button id="close-chat">&times;</button>
+
+            </div>
+
+            <div class="chat-body" id="chat-body">
+
+                <div class="bot-msg">Hello! Welcome to Professional Tuition Classes. Are you looking for Online or Offline classes for grades 5th to 10th?</div>
+
+            </div>
+
+            <div class="chat-footer">
+
+                <input type="text" id="chat-input" placeholder="Type a message...">
+
+                <button id="send-chat"><i class="fas fa-paper-plane"></i></button>
+
+            </div>
+
+        </div>
+
+        <button id="chat-toggle-btn" class="chat-toggle-btn">
+
+            <i class="fas fa-comment-dots"></i>
+
+        </button>
+
     </div>
 
-    <!-- Your existing footer -->
 
-    <!-- Script containing database and login logic -->
-    <script>
-        const studentsDatabase = [
-            { id: "1", pass: "student123", name: "Aarav Sharma", fees: "1500pending" },
-            { id: "2", pass: "student123", name: "Priya Verma", fees: "2000pending" },
-            { id: "3", pass: "student123", name: "Rahul Gupta", fees: "1800" }
-        ];
 
-        function loginStudent() {
-            const idInput = document.getElementById('loginId').value.trim();
-            const passInput = document.getElementById('loginPass').value.trim();
-            const msg = document.getElementById('msg');
+    <footer>
 
-            const student = studentsDatabase.find(s => s.id === idInput && s.pass === passInput);
+        <p>&copy; 2026 Professional Tuition Classes. All Rights Reserved.</p>
 
-            if (student) {
-                document.getElementById('dName').innerText = student.name;
-                document.getElementById('dId').innerText = student.id;
-                document.getElementById('dFees').innerText = student.fees;
-                document.getElementById('dashboard').style.display = 'block';
-                msg.innerText = '';
-            } else {
-                msg.innerText = 'Invalid Student ID or Password.';
-                document.getElementById('dashboard').style.display = 'none';
-            }
-        }
+    </footer>
 
-        function logout() {
-            document.getElementById('dashboard').style.display = 'none';
-            document.getElementById('loginId').value = '';
-            document.getElementById('loginPass').value = '';
-        }
-    </script>
+
+
+    <script src="script.js"></script>
+
 </body>
-</html>
+
+</html> 
