@@ -11,7 +11,7 @@
 <body>
 
     <header class="navbar">
-        <div class="logo">P.T.C.</div>
+        <div class="logo">P.T.C. <span>Classes</span></div>
         <nav>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
@@ -33,11 +33,13 @@
             <h1>Give Your Child the Ultimate Academic Advantage!</h1>
             <p>At <strong>Professional Tuition Classes</strong>, we transform classroom stress into top academic scores through concept clarity and disciplined guidance.</p>
             <div class="hero-btns">
-                <a href="#products" class="btn btn-secondary">Explore Courses</a>
+                <a href="#products" class="btn btn-primary">Explore Courses</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
             </div>
         </div>
     </section>
 
+    <!-- Products Section: 5th to 10th & Online/Offline -->
     <section id="products" class="products-section">
         <h2 class="section-title">Our Programs</h2>
         <p class="section-subtitle">Tailored learning for grades 5th to 10th in flexible modes</p>
@@ -117,15 +119,10 @@
                 <h3>Expert Educator Team</h3>
                 <p>Learn from energetic, highly qualified tutors who stay updated with modern school curriculums.</p>
             </div>
-
-            <div class="card">
-                <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Safe & Disciplined</h3>
-                <p>A peaceful, zero-distraction environment where your child’s study time is 100% productive.</p>
-            </div>
         </div>
     </section>
 
+    <!-- Feedback Section -->
     <section id="feedback" class="feedback-section">
         <h2 class="section-title">Student & Parent Feedback</h2>
         <p class="section-subtitle">We would love to hear about your experience with us!</p>
@@ -133,25 +130,26 @@
         <div class="feedback-form-container">
             <form id="feedbackForm">
                 <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" name="Name" placeholder="Your Name" required>
                 </div>
                 <div class="form-group">
-                    <select required>
+                    <select name="Role" required>
                         <option value="" disabled selected>Select Your Role</option>
-                        <option value="student">Student (5th-10th)</option>
-                        <option value="parent">Parent</option>
+                        <option value="Student (5th-10th)">Student (5th-10th Grade)</option>
+                        <option value="Parent">Parent</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <textarea rows="4" placeholder="Write your feedback or review here..." required></textarea>
+                    <textarea name="Feedback" rows="4" placeholder="Write your feedback or review here..." required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Feedback</button>
             </form>
         </div>
     </section>
 
     <section id="contact" class="contact-section">
         <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Connect with our administrative office directly</p>
 
         <div class="contact-container">
             <div class="contact-card">
@@ -161,22 +159,23 @@
                 <a href="https://wa.me/919987566019" target="_blank" class="contact-link">+91 9987566019</a>
             </div>
 
-            <div class="contact-card">
-                <i class="fas fa-map-marker-alt contact-icon"></i>
+            <div class="contact-card" style="text-align: left;">
+                <i class="fas fa-map-marker-alt contact-icon" style="color: var(--accent-color); background: #FEF2F2;"></i>
                 <h3>Our Address</h3>
                 <p>6-C, 1003, Nakshatra Greens, Tivri Road, Naigaon (East), Palghar - 401208.</p>
             </div>
         </div>
     </section>
 
+    <!-- Floating Chatbot Widget -->
     <div id="chatbot-container" class="chatbot-container">
         <div id="chat-window" class="chat-window" style="display: none;">
             <div class="chat-header">
                 <h4>PTC Support Bot</h4>
                 <button id="close-chat">&times;</button>
             </div>
-            <div class="chat-body">
-                <p class="bot-msg">Hello! Welcome to Professional Tuition Classes. Are you looking for Online or Offline classes for grades 5th to 10th?</p>
+            <div class="chat-body" id="chat-body">
+                <div class="bot-msg">Hello! Welcome to Professional Tuition Classes. Are you looking for Online or Offline classes for grades 5th to 10th?</div>
             </div>
             <div class="chat-footer">
                 <input type="text" id="chat-input" placeholder="Type a message...">
@@ -189,7 +188,7 @@
     </div>
 
     <footer>
-        <p>&copy; Professional Tuition Classes. All Rights Reserved.</p>
+        <p>&copy; 2026 Professional Tuition Classes. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
