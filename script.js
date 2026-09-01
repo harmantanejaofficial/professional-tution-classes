@@ -8,6 +8,57 @@ if (hamburger && navLinks) {
     });
 }
 
+// --- Student Portal Login Modal Logic ---
+const loginBtn = document.getElementById('loginBtn');
+const loginModal = document.getElementById('loginModal');
+const closeLogin = document.getElementById('closeLogin');
+const loginForm = document.getElementById('loginForm');
+const loginMessage = document.getElementById('loginMessage');
+
+if (loginBtn && loginModal && closeLogin) {
+    loginBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        loginModal.style.display = 'flex';
+    });
+
+    closeLogin.addEventListener('click', () => {
+        loginModal.style.display = 'none';
+        loginMessage.textContent = '';
+        loginForm.reset();
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === loginModal) {
+            loginModal.style.display = 'none';
+            loginMessage.textContent = '';
+            loginForm.reset();
+        }
+    });
+}
+
+if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const id = document.getElementById('studentId').value.trim();
+        const pass = document.getElementById('studentPassword').value.trim();
+
+        // Sample mock verification credentials: ID -> PTC101, Password -> student123
+        if (id === 'PTC101' && pass === 'student123') {
+            loginMessage.style.color = '#10B981';
+            loginMessage.textContent = 'Login Successful! Redirecting to dashboard...';
+            setTimeout(() => {
+                alert('Welcome to your Student Dashboard, PTC101!');
+                loginModal.style.display = 'none';
+                loginForm.reset();
+                loginMessage.textContent = '';
+            }, 1000);
+        } else {
+            loginMessage.style.color = 'var(--accent-color)';
+            loginMessage.textContent = 'Invalid Student ID or Password. Please try again.';
+        }
+    });
+}
+
 // --- Chatbot Logic ---
 const chatToggleBtn = document.getElementById('chat-toggle-btn');
 const chatWindow = document.getElementById('chat-window');
