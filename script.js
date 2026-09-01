@@ -8,6 +8,13 @@ if (hamburger && navLinks) {
     });
 }
 
+// --- Master Student Database & Portal Logic ---
+const studentsDatabase = [
+    { id: "PTC101", pass: "student123", name: "Aarav Sharma", fees: "1500", grade: "10th Grade" },
+    { id: "PTC102", pass: "mypass456", name: "Priya Verma", fees: "2000", grade: "9th Grade" },
+    { id: "PTC103", pass: "secure789", name: "Rahul Gupta", fees: "1800", grade: "8th Grade" }
+];
+
 // --- Student Portal Login Modal Logic ---
 const loginBtn = document.getElementById('loginBtn');
 const loginModal = document.getElementById('loginModal');
@@ -39,24 +46,65 @@ if (loginBtn && loginModal && closeLogin) {
 if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const id = document.getElementById('studentId').value.trim();
-        const pass = document.getElementById('studentPassword').value.trim();
+        const idInput = document.getElementById('studentId').value.trim();
+        const passInput = document.getElementById('studentPassword').value.trim();
 
-        // Sample mock verification credentials: ID -> PTC101, Password -> student123
-        if (id === 'PTC101' && pass === 'student123') {
+        const student = studentsDatabase.find(s => s.id === idInput && s.pass === passInput);
+
+        if (student) {
             loginMessage.style.color = '#10B981';
-            loginMessage.textContent = 'Login Successful! Redirecting to dashboard...';
+            loginMessage.textContent = 'Login Successful! Opening dashboard...';
+            
             setTimeout(() => {
-                alert('Welcome to your Student Dashboard, PTC101!');
                 loginModal.style.display = 'none';
                 loginForm.reset();
                 loginMessage.textContent = '';
-            }, 1000);
+                
+                // Renders the dashboard view dynamically onto the main screen
+                renderDashboard(student);
+            }, 800);
         } else {
-            loginMessage.style.color = 'var(--accent-color)';
+            loginMessage.style.color = '#DC2626';
             loginMessage.textContent = 'Invalid Student ID or Password. Please try again.';
         }
     });
+}
+
+// --- Dynamic Dashboard Generator ---
+function renderDashboard(student) {
+    const homeSection = document.getElementById('home');
+    if (homeSection) {
+        homeSection.innerHTML = `
+            <div class="hero-content" style="max-width: 700px; margin: 0 auto; background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #E2E8F0; text-align: left; color: #1E293B;">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #F1F5F9; padding-bottom: 15px; margin-bottom: 25px;">
+                    <div>
+                        <h2 style="color: #0F172A; font-size: 1.8rem; margin-bottom: 2px;">Student Dashboard</h2>
+                        <p style="color: #64748B; font-size: 0.95rem;">Welcome back, <strong>${student.name}</strong>!</p>
+                    </div>
+                    <button onclick="location.reload()" style="background: #64748B; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.85rem;">Logout</button>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 25px;">
+                    <div style="background: #FEF2F2; padding: 18px; border-radius: 10px; border: 1px solid #FCA5A5;">
+                        <span style="font-size: 0.75rem; font-weight: 700; color: #7F1D1D; display: block; margin-bottom: 4px;">STUDENT ID</span>
+                        <p style="font-size: 1.2rem; font-weight: 700; color: #DC2626;">${student.id}</p>
+                    </div>
+                    <div style="background: #F0FDF4; padding: 18px; border-radius: 10px; border: 1px solid #86EFAC;">
+                        <span style="font-size: 0.75rem; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;">TUITION FEES</span>
+                        <p style="font-size: 1.2rem; font-weight: 700; color: #16A34A;">₹${student.fees}</p>
+                    </div>
+                    <div style="background: #EFF6FF; padding: 18px; border-radius: 10px; border: 1px solid #BFDBFE;">
+                        <span style="font-size: 0.75rem; font-weight: 700; color: #1E40AF; display: block; margin-bottom: 4px;">GRADE LEVEL</span>
+                        <p style="font-size: 1.2rem; font-weight: 700; color: #2563EB;">${student.grade}</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size: 1.1rem; color: #0F172A; margin-bottom: 10px;">Portal Notice Board</h3>
+                <p style="color: #64748B; font-size: 0.95rem; line-height: 1.6;">Your student portal is active. Check with your teachers for ongoing class schedules, chapter test papers, and study resources.</p>
+            </div>
+        `;
+        homeSection.scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 // --- Chatbot Logic ---
@@ -81,7 +129,7 @@ function appendMessage(sender, text) {
     const msgDiv = document.createElement('div');
     
     if (sender === 'user') {
-        msgDiv.style.background = 'var(--accent-color)';
+        msgDiv.style.background = '#DC2626';
         msgDiv.style.color = 'white';
         msgDiv.style.padding = '10px 14px';
         msgDiv.style.borderRadius = '8px';
