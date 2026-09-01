@@ -279,3 +279,25 @@ footer {
         font-size: 2rem;
     }
 }
+/* Product tags */
+.mode-tags { margin-top: 15px; }
+.tag { background: #e0e0e0; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-right: 5px; }
+.tag.highlight { background: #007bff; color: #fff; }
+
+/* Feedback Section */
+.feedback-section { padding: 50px 20px; background: #f9f9f9; text-align: center; }
+.feedback-form-container { max-width: 500px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+.form-group { margin-bottom: 15px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: 'Poppins', sans-serif; }
+
+/* Chatbot Widget Styles */
+.chatbot-container { position: fixed; bottom: 20px; right: 20px; z-index: 1000; font-family: 'Poppins', sans-serif; }
+.chat-toggle-btn { background: #007bff; color: white; border: none; width: 55px; height: 55px; border-radius: 50%; font-size: 24px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+.chat-window { width: 300px; background: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); overflow: hidden; margin-bottom: 10px; display: flex; flex-direction: column; }
+.chat-header { background: #007bff; color: white; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; }
+.chat-header button { background: none; border: none; color: white; font-size: 20px; cursor: pointer; }
+.chat-body { padding: 15px; height: 200px; overflow-y: auto; font-size: 13px; background: #f4f4f4; }
+.bot-msg { background: #e2e8f0; padding: 8px 12px; border-radius: 6px; margin-bottom: 10px; }
+.chat-footer { display: flex; padding: 10px; border-top: 1px solid #ddd; background: white; }
+.chat-footer input { flex: 1; padding: 6px; border: 1px solid #ccc; border-radius: 4px; outline: none; }
+.chat-footer button { background: #007bff; color: white; border: none; padding: 6px 12px; margin-left: 5px; border-radius: 4px; cursor: pointer; }
