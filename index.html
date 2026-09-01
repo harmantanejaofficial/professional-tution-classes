@@ -15,9 +15,12 @@
         <nav>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#products">Courses</a></li>
                 <li><a href="#why-us">Why Us</a></li>
                 <li><a href="#offer">Offers</a></li>
+                <li><a href="#feedback">Feedback</a></li>
                 <li><a href="#contact">Contact</a></li>
+            </ul>
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
@@ -30,7 +33,50 @@
             <h1>Give Your Child the Ultimate Academic Advantage!</h1>
             <p>At <strong>Professional Tuition Classes</strong>, we transform classroom stress into top academic scores through concept clarity and disciplined guidance.</p>
             <div class="hero-btns">
-                <a href="#why-us" class="btn btn-secondary">Learn More</a>
+                <a href="#products" class="btn btn-secondary">Explore Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <h2 class="section-title">Our Programs</h2>
+        <p class="section-subtitle">Tailored learning for grades 5th to 10th in flexible modes</p>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>5th to 7th Grade (Foundation)</h3>
+                <p>Building strong fundamentals in Mathematics, Science, and English during crucial formative years.</p>
+                <div class="mode-tags">
+                    <span class="tag">Online</span> <span class="tag">Offline</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-award"></i></div>
+                <h3>8th to 10th Grade (Board Prep)</h3>
+                <p>Advanced concept training, rigorous board exam preparation, and continuous progress assessments.</p>
+                <div class="mode-tags">
+                    <span class="tag">Online</span> <span class="tag">Offline</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-laptop-house"></i></div>
+                <h3>Online Interactive Batches</h3>
+                <p>Live, two-way interactive classes from the comfort of your home with digital notes and recorded sessions.</p>
+                <div class="mode-tags">
+                    <span class="tag highlight">Live Online</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-school"></i></div>
+                <h3>Offline Classroom Coaching</h3>
+                <p>Traditional face-to-face learning in our disciplined, distraction-free Naigaon center.</p>
+                <div class="mode-tags">
+                    <span class="tag highlight">In-Center</span>
+                </div>
             </div>
         </div>
     </section>
@@ -80,6 +126,30 @@
         </div>
     </section>
 
+    <section id="feedback" class="feedback-section">
+        <h2 class="section-title">Student & Parent Feedback</h2>
+        <p class="section-subtitle">We would love to hear about your experience with us!</p>
+        
+        <div class="feedback-form-container">
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="" disabled selected>Select Your Role</option>
+                        <option value="student">Student (5th-10th)</option>
+                        <option value="parent">Parent</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea rows="4" placeholder="Write your feedback or review here..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Feedback</button>
+            </form>
+        </div>
+    </section>
+
     <section id="contact" class="contact-section">
         <h2 class="section-title">Get In Touch</h2>
 
@@ -98,6 +168,25 @@
             </div>
         </div>
     </section>
+
+    <div id="chatbot-container" class="chatbot-container">
+        <div id="chat-window" class="chat-window" style="display: none;">
+            <div class="chat-header">
+                <h4>PTC Support Bot</h4>
+                <button id="close-chat">&times;</button>
+            </div>
+            <div class="chat-body">
+                <p class="bot-msg">Hello! Welcome to Professional Tuition Classes. Are you looking for Online or Offline classes for grades 5th to 10th?</p>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chat-input" placeholder="Type a message...">
+                <button id="send-chat"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button id="chat-toggle-btn" class="chat-toggle-btn">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
 
     <footer>
         <p>&copy; Professional Tuition Classes. All Rights Reserved.</p>
