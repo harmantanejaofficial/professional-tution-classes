@@ -66,13 +66,68 @@
             <p>We are dedicated to nurturing young minds with structured mentoring, individual attention, and proven teaching methodologies. Whether learning from home or at our Naigaon center, students receive the tools they need to succeed.</p>
         </div>
         
-    <!-- Star Achievers Section -->
-<section style="padding: 40px 20px; text-align: center; background: #f9f9f9; margin: 20px 0;">
-    <h2 style="margin-bottom: 20px; font-size: 24px; color: #333;">🌟 Star Achievers (Above 75%)</h2>
-    <div id="achieversGrid" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-        <!-- Achievers boxes will appear here automatically -->
-    </div>
-</section>
+<!-- Baki teri website ka content yahan hoga -->
+
+    <!-- ================= STAR ACHIEVERS SECTION ================= -->
+    <section style="padding: 40px 20px; text-align: center; background: #f9f9f9; margin: 20px 0; font-family: Arial, sans-serif;">
+        <h2 style="margin-bottom: 20px; font-size: 24px; color: #333;">🌟 Star Achievers (Above 75%)</h2>
+        <div id="achieversGrid" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <p>Loading achievers...</p>
+        </div>
+    </section>
+    <!-- ========================================================== -->
+
+
+    <!-- JavaScript seedhe isi file ke andar daal di hai taaki connection fail hone ka koi chance hi na rahe -->
+    <script>
+        const studentsDatabase = {
+            "01": { name: "TIYA RAHEJA", class: "6th Grade", percentage: "73.84%" },
+            "02": { name: "RUDRA", class: "6th Grade", percentage: "90%" },
+            "03": { name: "SAKSHAM", class: "6th Grade", percentage: "70.76%" },
+            "04": { name: "TANMAY", class: "7th Grade", percentage: "85%" },
+            "05": { name: "AADHARSH", class: "7th Grade", percentage: "78%" },
+            "06": { name: "LAKSHAYA", class: "4th Grade", percentage: "65%" },
+            "07": { name: "PULKIT", class: "4th Grade", percentage: "82%" },
+            "08": { name: "VANSH", class: "4th Grade", percentage: "71%" },
+            "09": { name: "ANSH", class: "3rd Grade", percentage: "92%" }
+        };
+
+        const achieversGrid = document.getElementById('achieversGrid');
+
+        if (achieversGrid) {
+            achieversGrid.innerHTML = ''; // "Loading..." hata dega
+            let count = 0;
+
+            Object.values(studentsDatabase).forEach(student => {
+                const numericPercentage = parseFloat(student.percentage);
+
+                // Sirf 75% se zyada wale students ke boxes banenge
+                if (numericPercentage > 75) {
+                    count++;
+                    const card = document.createElement('div');
+                    
+                    card.style.background = '#ffffff';
+                    card.style.border = '1px solid #e0e0e0';
+                    card.style.borderRadius = '8px';
+                    card.style.padding = '20px';
+                    card.style.width = '200px';
+                    card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
+                    card.style.textAlign = 'center';
+
+                    card.innerHTML = `
+                        <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #222;">${student.name}</h3>
+                        <p style="margin: 5px 0; color: #666; font-size: 14px;">Standard: ${student.class}</p>
+                        <p style="margin: 5px 0; color: #27ae60; font-size: 16px; font-weight: bold;">${student.percentage}</p>
+                    `;
+                    achieversGrid.appendChild(card);
+                }
+            });
+
+            if (count === 0) {
+                achieversGrid.innerHTML = '<p>No star achievers to display at the moment.</p>';
+            }
+        }
+    </script>
 
     <!-- Contact / Footer Section -->
     <footer id="contact" class="footer">
