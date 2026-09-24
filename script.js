@@ -7,49 +7,6 @@ if (hamburger && navLinks) {
         navLinks.classList.toggle('active');
     });
 }
-// --- Display Students Above 75% ---
-document.addEventListener('DOMContentLoaded', () => {
-    // Mirror of your student database from the login portal
-    const studentsDatabase = {
-        "01": { name: "TIYA RAHEJA", class: "6th Grade", percentage: "73.84%" },
-        "02": { name: "RUDRA", class: "6th Grade", percentage: "90%" },
-        "03": { name: "SAKSHAM", class: "6th Grade", percentage: "70.76%" },
-        "04": { name: "TANMAY", class: "7th Grade", percentage: "85%" },
-        "05": { name: "AADHARSH", class: "7th Grade", percentage: "78%" },
-        "07": { name: "PULKIT", class: "4th Grade", percentage: "82%" },
-        "08": { name: "VANSH", class: "4th Grade", percentage: "71%" },
-        "09": { name: "ANSH", class: "3rd Grade", percentage: "92%" }
-    };
-
-    const achieversGrid = document.getElementById('achieversGrid');
-
-    if (achieversGrid) {
-        achieversGrid.innerHTML = '';
-        let count = 0;
-
-        Object.values(studentsDatabase).forEach(student => {
-            // Convert percentage string like "90%" to a number 90
-            const numericPercentage = parseFloat(student.percentage);
-
-            // Filter condition: strictly greater than 75
-            if (numericPercentage > 75) {
-                count++;
-                const card = document.createElement('div');
-                card.className = 'course-card';
-                card.innerHTML = `
-                    <h3>${student.name}</h3>
-                    <p><strong>Standard:</strong> ${student.class}</p>
-                    <p><strong>Percentage:</strong> <span style="color: var(--accent-color); font-weight: bold;">${student.percentage}</span></p>
-                `;
-                achieversGrid.appendChild(card);
-            }
-        });
-
-        if (count === 0) {
-            achieversGrid.innerHTML = '<p>No star achievers to display at the moment.</p>';
-        }
-    }
-});
 
 // --- Chatbot UI Logic ---
 const chatToggleBtn = document.getElementById('chat-toggle-btn');
